@@ -40,5 +40,8 @@
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml">
       <Filter>Resource Files\ui</Filter>
     </None>
+    <None Include="ui\BMRTab\BMRTab.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
   </ItemGroup>
 </Project>

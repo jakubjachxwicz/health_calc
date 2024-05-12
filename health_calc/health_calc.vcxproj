@@ -94,6 +94,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <None Include="ui\BMRTab\BMRTab.qml" />
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml" />
     <QtRcc Include="qml.qrc" />
     <None Include="main.qml" />

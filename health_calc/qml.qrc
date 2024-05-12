@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>ui/HeaderTabButton/HeaderTabButton.qml</file>
         <file>ui/Assets/favicon.png</file>
+        <file>ui/BMRTab/BMRTab.qml</file>
     </qresource>
 </RCC>
