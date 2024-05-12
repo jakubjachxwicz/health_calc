@@ -75,18 +75,24 @@ GridLayout {
 		Layout.column: 1
 		Layout.preferredWidth: parent.width * .25
 		Layout.preferredHeight: 30
+
+		text: BMRHandler.age
 	}
 	TextField {
 		Layout.row: 2
 		Layout.column: 2
 		Layout.preferredHeight: 30
 		Layout.preferredWidth: parent.width * .25
+
+		text: BMRHandler.height
 	}
 	TextField {
 		Layout.row: 2
 		Layout.column: 3
 		Layout.preferredHeight: 30
 		Layout.preferredWidth: parent.width * .25
+
+		text: BMRHandler.weight
 	}
 
 	Label {
