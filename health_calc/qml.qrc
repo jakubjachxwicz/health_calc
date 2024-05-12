@@ -2,5 +2,6 @@
     <qresource prefix="/qt/qml/health_calc">
         <file>main.qml</file>
         <file>ui/HeaderTabButton/HeaderTabButton.qml</file>
+        <file>ui/Assets/favicon.png</file>
     </qresource>
 </RCC>
