@@ -1,6 +1,9 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls
+import QtQuick.Layouts
+
+import "ui/HeaderTabButton"
 
 
 ApplicationWindow {
@@ -9,12 +12,75 @@ ApplicationWindow {
     height: 720
     title: "Kalkulator zdrowotny"
 
-    Text {
+    header: TabBar {
+        id: headerTabBar
+        width: parent.width
+
+        HeaderTabButton {
+            id: htb1
+            text: qsTr("\u0141osie")
+        }
+
+        HeaderTabButton {
+            id: htb2
+            text: qsTr("Jelenie")
+        }
+
+        HeaderTabButton {
+            id: htb3
+            text: qsTr("Sarny")
+        }
+
+        HeaderTabButton {
+            id: htb4
+            text: qsTr("Dziki")
+        }
+
+        HeaderTabButton {
+            id: htb5
+            text: qsTr("Lisy")
+        }
+    }
+
+    StackLayout {
+        width: parent.width
+        height: parent.height
+        currentIndex: headerTabBar.currentIndex
         anchors.fill: parent
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        font.bold: true
-        font.pointSize: 42
-        text: "Hello World!"
+
+        Item {
+            id: tab1
+            Text {
+                text: "\u0141osie"
+            }
+        }
+
+        Item {
+            id: tab2
+            Text {
+                text: "Jelenie"
+            }
+        }
+
+        Item {
+            id: tab3
+            Text {
+                text: "Sarny"
+            }
+        }
+
+        Item {
+            id: tab4
+            Text {
+                text: "Dziki"
+            }
+        }
+
+        Item {
+            id: tab5
+            Text {
+                text: "Lisy"
+            }
+        }
     }
 }
