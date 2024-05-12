@@ -1,11 +1,14 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
+import QtQuick.Controls
 
-Window {
+
+ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
-    title: "health_calc"
+    width: 1280
+    height: 720
+    title: "Kalkulator zdrowotny"
+
     Text {
         anchors.fill: parent
         horizontalAlignment: Text.AlignHCenter
