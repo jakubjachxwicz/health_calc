@@ -21,6 +21,9 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Resource Files\ui">
+      <UniqueIdentifier>{822f8c0b-fc81-468a-9c38-1f41fa4d31bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +35,10 @@
     <None Include="main.qml">
       <Filter>Source Files</Filter>
     </None>
-
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ui\HeaderTabButton\HeaderTabButton.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
   </ItemGroup>
 </Project>
