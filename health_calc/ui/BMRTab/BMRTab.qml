@@ -60,13 +60,26 @@ GridLayout {
 		Layout.preferredWidth: parent.width * .25
 
 		RadioButton {
+			id: femaleRadioButton
+		
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			text: qsTr("K")
+			checked: (BMRHandler.isMale ? false : true)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setIsMale(false);
+			}
 		}
 		RadioButton {
+			id: maleRadioButton
+
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			text: qsTr("M")
-			checked: true
+			checked: (BMRHandler.isMale ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setIsMale(true);
+			}
 		}
 	}
 
@@ -76,6 +89,7 @@ GridLayout {
 		Layout.preferredWidth: parent.width * .25
 		Layout.preferredHeight: 30
 
+		onEditingFinished: BMRHandler.setAge(text)
 		text: BMRHandler.age
 	}
 	TextField {
@@ -84,6 +98,7 @@ GridLayout {
 		Layout.preferredHeight: 30
 		Layout.preferredWidth: parent.width * .25
 
+		onEditingFinished: BMRHandler.setHeight(text)
 		text: BMRHandler.height
 	}
 	TextField {
@@ -92,6 +107,7 @@ GridLayout {
 		Layout.preferredHeight: 30
 		Layout.preferredWidth: parent.width * .25
 
+		onEditingFinished: BMRHandler.setWeight(text)
 		text: BMRHandler.weight
 	}
 
@@ -163,26 +179,56 @@ GridLayout {
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			Layout.row: 1
 			Layout.column: 0
+
+			checked: (BMRHandler.activityLevel == 0 ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setActivityLevel(0)
+			}
 		}
 		RadioButton {
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			Layout.row: 1
 			Layout.column: 1
+
+			checked: (BMRHandler.activityLevel == 1 ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setActivityLevel(1)
+			}
 		}
 		RadioButton {
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			Layout.row: 1
 			Layout.column: 2
+
+			checked: (BMRHandler.activityLevel == 2 ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setActivityLevel(2)
+			}
 		}
 		RadioButton {
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			Layout.row: 1
 			Layout.column: 3
+
+			checked: (BMRHandler.activityLevel == 3 ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setActivityLevel(3)
+			}
 		}
 		RadioButton {
 			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
 			Layout.row: 1
 			Layout.column: 4
+
+			checked: (BMRHandler.activityLevel == 4 ? true : false)
+			MouseArea {
+				anchors.fill: parent
+				onClicked: BMRHandler.setActivityLevel(4)
+			}
 		}
 	}
 
@@ -204,7 +250,7 @@ GridLayout {
 		Layout.margins: 80
 
 		font.pixelSize: 16
-		text: qsTr("Twoje dzienne zapotrzebowanie kaloryczne: 2137 kcal")
+		text: BMRHandler.resultMessage
 	}
 
 	ColumnLayout {
