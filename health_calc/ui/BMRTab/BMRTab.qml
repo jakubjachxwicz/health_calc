@@ -3,269 +3,263 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 
-GridLayout {
+ColumnLayout {
+	width: parent.width * .8
 	anchors.horizontalCenter: parent.horizontalCenter
-	width: parent.width * .9
-	rows: 7
-	columns: 4
-
+	
 	Label {
-		Layout.row: 0
-		Layout.column: 0
-		Layout.columnSpan: 4
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-
-		width: parent.width
-		padding: 40
+		horizontalAlignment: Text.AlignHCenter
+		Layout.fillWidth: true
+		Layout.fillHeight: true
+		
+		wrapMode: Text.WrapAnywhere
+		padding: 36
 		text: "Dzienne zapotrzebowanie kaloryczne"
 		font.pixelSize: 36
 	}
 
-	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 0
-
-		padding: 5
-		text: "Płeć"
-	}
-	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 1
-
-		padding: 5
-		text: "Wiek (lata)"
-	}
-	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 2
-
-		padding: 5
-		text: "Wzrost (cm)"
-	}
-	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 3
-
-		padding: 5
-		text: "Waga (kg)"
-	}
-
 	RowLayout {
-		Layout.row: 2
-		Layout.column: 0
-		Layout.preferredWidth: parent.width * .25
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Płeć"
+			}
 
-		RadioButton {
-			id: femaleRadioButton
-		
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			text: qsTr("K")
-			checked: (BMRHandler.isMale ? false : true)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setIsMale(false);
+			RowLayout {
+				RadioButton {
+					id: femaleRadioButton
+					
+					Layout.fillWidth: true
+					Layout.fillHeight: true
+
+					text: qsTr("K")
+					checked: (BMRHandler.isMale ? false : true)
+					MouseArea {
+						anchors.fill: parent
+						onClicked: BMRHandler.setIsMale(false);
+					}
+				}
+				RadioButton {
+					id: maleRadioButton
+
+					Layout.fillWidth: true
+					Layout.fillHeight: true
+
+					text: qsTr("M")
+					checked: (BMRHandler.isMale ? true : false)
+					MouseArea {
+						anchors.fill: parent
+						onClicked: BMRHandler.setIsMale(true);
+					}
+				}
 			}
 		}
-		RadioButton {
-			id: maleRadioButton
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			text: qsTr("M")
-			checked: (BMRHandler.isMale ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setIsMale(true);
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Wiek (lata)"
+			}
+
+			TextField {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				onEditingFinished: BMRHandler.setAge(text)
+				text: BMRHandler.age
 			}
 		}
-	}
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-	TextField {
-		Layout.row: 2
-		Layout.column: 1
-		Layout.preferredWidth: parent.width * .25
-		Layout.preferredHeight: 30
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Wzrost (cm)"
+			}
 
-		onEditingFinished: BMRHandler.setAge(text)
-		text: BMRHandler.age
-	}
-	TextField {
-		Layout.row: 2
-		Layout.column: 2
-		Layout.preferredHeight: 30
-		Layout.preferredWidth: parent.width * .25
+			TextField {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				onEditingFinished: BMRHandler.setHeight(text)
+				text: BMRHandler.height
+			}
+		}
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-		onEditingFinished: BMRHandler.setHeight(text)
-		text: BMRHandler.height
-	}
-	TextField {
-		Layout.row: 2
-		Layout.column: 3
-		Layout.preferredHeight: 30
-		Layout.preferredWidth: parent.width * .25
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Waga (kg)"
+			}
 
-		onEditingFinished: BMRHandler.setWeight(text)
-		text: BMRHandler.weight
+			TextField {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				onEditingFinished: BMRHandler.setWeight(text)
+				text: BMRHandler.weight
+			}
+		}
 	}
 
 	Label {
-		Layout.row: 3
-		Layout.column: 0
-		Layout.columnSpan: 4
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-
-		width: parent.width
+		Layout.fillWidth: true
+		Layout.fillHeight: true
+		
+		wrapMode: Text.WrapAnywhere
+		horizontalAlignment: Text.AlignHCenter
 		topPadding: 32
-		bottomPadding: 4
+		bottomPadding: 16
 		text: "Poziom aktywności fizycznej"
 		font.pixelSize: 24
 	}
 
-	GridLayout {
-		Layout.row: 4
-		Layout.column: 0
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.columnSpan: 4
+	RowLayout {
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-		width: parent.width
+				horizontalAlignment: Text.AlignHCenter
+				text: qsTr("Znikomy/brak")
+			}
 
-		columns: 5
-		rows: 2
+			RadioButton {
+				// Layout.fillWidth: true
+				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.fillHeight: true
 
-		Label {
-			Layout.row: 0
-			Layout.column: 0
-			Layout.preferredWidth: parent.width * .2
-			horizontalAlignment: Text.AlignHCenter
-			text: qsTr("Znikomy/brak")
-		}
-		Label {
-			Layout.row: 0
-			horizontalAlignment: Text.AlignHCenter
-			Layout.preferredWidth: parent.width * .2
-			Layout.column: 1
-
-			text: qsTr("Niski")
-		}
-		Label {
-			Layout.row: 0
-			Layout.preferredWidth: parent.width * .2
-			horizontalAlignment: Text.AlignHCenter
-			Layout.column: 2
-
-			text: qsTr("Przeciętny")
-		}
-		Label {
-			Layout.row: 0
-			horizontalAlignment: Text.AlignHCenter
-			Layout.preferredWidth: parent.width * .2
-			Layout.column: 3
-
-			text: qsTr("Wysoki")
-		}
-		Label {
-			Layout.row: 0
-			horizontalAlignment: Text.AlignHCenter
-			Layout.preferredWidth: parent.width * .2
-			Layout.column: 4
-
-			text: qsTr("Bardzo wysoki")
-		}
-
-		RadioButton {
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			Layout.row: 1
-			Layout.column: 0
-
-			checked: (BMRHandler.activityLevel == 0 ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setActivityLevel(0)
+				checked: (BMRHandler.activityLevel == 0 ? true : false)
+				MouseArea {
+					anchors.fill: parent
+					onClicked: BMRHandler.setActivityLevel(0)
+				}
 			}
 		}
-		RadioButton {
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			Layout.row: 1
-			Layout.column: 1
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-			checked: (BMRHandler.activityLevel == 1 ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setActivityLevel(1)
+				horizontalAlignment: Text.AlignHCenter
+				text: qsTr("Niski")
+			}
+
+			RadioButton {
+				// Layout.fillWidth: true
+				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.fillHeight: true
+
+				checked: (BMRHandler.activityLevel == 1 ? true : false)
+				MouseArea {
+					anchors.fill: parent
+					onClicked: BMRHandler.setActivityLevel(1)
+				}
 			}
 		}
-		RadioButton {
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			Layout.row: 1
-			Layout.column: 2
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-			checked: (BMRHandler.activityLevel == 2 ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setActivityLevel(2)
+				horizontalAlignment: Text.AlignHCenter
+				text: qsTr("Przeciętny")
+			}
+
+			RadioButton {
+				// Layout.fillWidth: true
+				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.fillHeight: true
+
+				checked: (BMRHandler.activityLevel == 2 ? true : false)
+				MouseArea {
+					anchors.fill: parent
+					onClicked: BMRHandler.setActivityLevel(2)
+				}
 			}
 		}
-		RadioButton {
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			Layout.row: 1
-			Layout.column: 3
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-			checked: (BMRHandler.activityLevel == 3 ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setActivityLevel(3)
+				horizontalAlignment: Text.AlignHCenter
+				text: qsTr("Wysoki")
+			}
+
+			RadioButton {
+				// Layout.fillWidth: true
+				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.fillHeight: true
+
+				checked: (BMRHandler.activityLevel == 3 ? true : false)
+				MouseArea {
+					anchors.fill: parent
+					onClicked: BMRHandler.setActivityLevel(3)
+				}
 			}
 		}
-		RadioButton {
-			Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-			Layout.row: 1
-			Layout.column: 4
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
 
-			checked: (BMRHandler.activityLevel == 4 ? true : false)
-			MouseArea {
-				anchors.fill: parent
-				onClicked: BMRHandler.setActivityLevel(4)
+				horizontalAlignment: Text.AlignHCenter
+				text: qsTr("Bardzo wysoki")
+			}
+
+			RadioButton {
+				// Layout.fillWidth: true
+				anchors.horizontalCenter: parent.horizontalCenter
+				Layout.fillHeight: true
+
+				checked: (BMRHandler.activityLevel == 4 ? true : false)
+				MouseArea {
+					anchors.fill: parent
+					onClicked: BMRHandler.setActivityLevel(4)
+				}
 			}
 		}
-	}
-
-	Button {
-		Layout.row: 5
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 0
-
-		implicitWidth: 294
-		implicitHeight: 64
-		text: qsTr("Oblicz")
 	}
 
 	Label {
-		Layout.row: 5
-		Layout.column: 1
-		Layout.columnSpan: 3
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.margins: 80
+		Layout.fillWidth: true
+		Layout.fillHeight: true
+		Layout.margins: 60
 
+		horizontalAlignment: Text.AlignHCenter
+		wrapMode: Text.WrapAnywhere
 		font.pixelSize: 16
 		text: BMRHandler.resultMessage
 	}
 
-	ColumnLayout {
-		Layout.row: 6
-		Layout.column: 3
+	Button {
+		Layout.fillHeight: true
+		anchors.right: parent.right
 
-		Button {
-			text: qsTr("Eksportuj do pliku")
-			implicitWidth: 213
-			implicitHeight: 41
-		}
-		Button {
-			text: qsTr("Informacje")
-			implicitWidth: 213
-			implicitHeight: 41
-		}
+		text: qsTr("Eksportuj do pliku")
+		implicitWidth: 213
+		implicitHeight: 41
+	}
+
+	Button {
+		Layout.fillHeight: true
+		anchors.right: parent.right
+	
+		text: qsTr("Informacje")
+		implicitWidth: 213
+		implicitHeight: 41
 	}
 }
