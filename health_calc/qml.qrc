@@ -4,5 +4,6 @@
         <file>ui/HeaderTabButton/HeaderTabButton.qml</file>
         <file>ui/Assets/favicon.png</file>
         <file>ui/BMRTab/BMRTab.qml</file>
+        <file>ui/TestComponent/TestComponent.qml</file>
     </qresource>
 </RCC>

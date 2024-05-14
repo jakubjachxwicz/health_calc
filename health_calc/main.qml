@@ -64,9 +64,7 @@ ApplicationWindow {
 
         Item {
             id: tab3
-            Text {
-                text: "Sarny"
-            }
+            TestComponent {}
         }
 
         Item {
