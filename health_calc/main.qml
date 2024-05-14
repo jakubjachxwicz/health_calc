@@ -5,6 +5,7 @@ import QtQuick.Layouts
 
 import "ui/HeaderTabButton"
 import "ui/BMRTab"
+import "ui/TestComponent"
 
 
 ApplicationWindow {
