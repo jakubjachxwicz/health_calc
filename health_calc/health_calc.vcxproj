@@ -95,6 +95,7 @@
   <ItemGroup>
     <ClCompile Include="controllers\BMRController.cpp" />
     <ClCompile Include="main.cpp" />
+    <None Include="ui\BMI\BMI.qml" />
     <None Include="ui\BMRTab\BMRTab.qml" />
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml" />
     <QtRcc Include="qml.qrc" />

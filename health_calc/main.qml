@@ -5,7 +5,7 @@ import QtQuick.Layouts
 
 import "ui/HeaderTabButton"
 import "ui/BMRTab"
-
+import "ui/BMI"
 
 ApplicationWindow {
     visible: true
@@ -19,7 +19,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb1
-            text: qsTr("\u0141osie")
+            text: qsTr("BMI")
         }
 
         HeaderTabButton {
@@ -51,8 +51,7 @@ ApplicationWindow {
 
         Item {
             id: tab1
-            Text {
-                text: "\u0141osie"
+            BMI {
             }
         }
 
