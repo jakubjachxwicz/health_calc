@@ -46,6 +46,9 @@
     <None Include="ui\BMRTab\BMRTab.qml">
       <Filter>Resource Files\ui</Filter>
     </None>
+    <None Include="ui\BMI\BMI.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="controllers\BMRController.h">

@@ -1,6 +1,7 @@
 ﻿import QtQuick 2.3
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Dialogs
 
 
 ColumnLayout {
@@ -261,5 +262,31 @@ ColumnLayout {
 		text: qsTr("Informacje")
 		implicitWidth: 213
 		implicitHeight: 41
+
+		onClicked: infoDialog.open()
+	}
+
+	Dialog {
+		id: infoDialog
+		standardButtons: Dialog.Ok
+		title: "Informacje"
+		width: 460
+
+		contentItem: ColumnLayout {
+			spacing: 20
+
+			Text {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+				wrapMode: Text.WordWrap
+				text: "Dzienne zapotrzebowanie kaloryczne to ilość kalorii, którą organizm człowieka potrzebuje codziennie, aby utrzymać swoje podstawowe funkcje życiowe oraz poziom aktywności fizycznej. Jest to suma energii niezbędnej do podtrzymania procesów metabolicznych, oddychania, krążenia krwi, trawienia, regulacji temperatury ciała oraz wykonywania wszelkich czynności fizycznych."
+			}
+			Text {
+				Layout.fillWidth: true
+				Layout.fillHeight: true	
+				wrapMode: Text.WordWrap
+				text: "Wzór:\nDla mężczyzn: 66.47 + (13.75 * masa [kg]) + (5.003 * wzrost [cm]) − (6.755 * wiek [lata])\nDla kobiet: 655.1 + (9.563 * masa [kg]) + (1.85 * wzrost [cm]) − (4.676 * wiek [lata])\nDodatkowe mnożniki w zależności od poziomu aktywności fizycznej:\nZnikomy: 1,2\nLekki: 1,375\nPrzeciętny: 1,55\nWysoki: 1,725\nBardzo wysoki: 1,9"
+			}
+		}
 	}
 }
