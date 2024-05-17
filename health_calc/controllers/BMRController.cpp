@@ -1,4 +1,5 @@
 #include "BMRController.h"
+#include "BMRExceptions.h"
 
 
 void BMRController::calculate()
@@ -59,52 +60,132 @@ QString BMRController::getResultMessage()
 
 void BMRController::setAge(int a)
 {
-	if (m_age == a)
-		return;
-	
-	m_age = a;
-	calculate();
-	emit ageChanged(m_age);
+	try
+	{
+		if (a <= 0 || a >= 150)
+			throw AgeInputException();
+
+		if (m_age == a)
+			return;
+
+		ageInputGood = true;
+
+		if (!weightInputGood || !heightInputGood)
+			throw AnyInputException();
+
+		m_age = a;
+		calculate();
+		emit ageChanged(m_age);
+	}
+	catch (AgeInputException e)
+	{
+		ageInputGood = false;
+		setResultMessage(e.what());
+	}
+	catch (AnyInputException e)
+	{
+		setResultMessage(e.what());
+	}
 }
 
 void BMRController::setHeight(double h)
 {
-	if (m_height == h)
-		return;
+	try
+	{
+		if (isnan(h) || h <= 0 || h >= 300)
+			throw HeightInputException();
 
-	m_height = h;
-	calculate();
-	emit heightChanged(m_height);
+		if (m_height == h)
+			return;
+
+		heightInputGood = true;
+
+		if (!ageInputGood || !weightInputGood)
+			throw AnyInputException();
+
+		m_height = h;
+		calculate();
+		emit heightChanged(m_height);
+	}
+	catch (HeightInputException e)
+	{
+		heightInputGood = false;
+		setResultMessage(e.what());
+	}
+	catch (AnyInputException e)
+	{
+		setResultMessage(e.what());
+	}
 }
 
 void BMRController::setIsMale(bool i)
 {
-	if (m_isMale == i)
-		return;
-	
-	m_isMale = i;
-	emit isMaleChanged(m_isMale);
-	calculate();
+	try
+	{
+		if (m_isMale == i)
+			return;
+
+		if (!ageInputGood || !heightInputGood || !weightInputGood)
+			throw AnyInputException();
+
+		m_isMale = i;
+		emit isMaleChanged(m_isMale);
+		calculate();
+	}
+	catch (AnyInputException e)
+	{
+		setResultMessage(e.what());
+	}
 }
 
 void BMRController::setWeight(double w)
 {
-	if (m_weight == w)
-		return;
-	
-	m_weight = w;
-	calculate();
-	emit weightChanged(m_weight);
+	try
+	{
+		if (isnan(w) || w <= 0 || w >= 500)
+			throw WeightInputException();
+
+		if (m_weight == w)
+			return;
+
+		weightInputGood = true;
+
+		if (!ageInputGood || !heightInputGood)
+			throw AnyInputException();
+
+		m_weight = w;
+		calculate();
+		emit weightChanged(m_weight);
+	}
+	catch (WeightInputException e)
+	{
+		weightInputGood = false;
+		setResultMessage(e.what());
+	}
+	catch (AnyInputException e)
+	{
+		setResultMessage(e.what());
+	}
 }
 
 void BMRController::setActivityLevel(int a)
 {
-	if (m_activityLevel == a)
-		return;
-	
-	m_activityLevel = a;
-	calculate();
-	emit activityLevelChanged(m_activityLevel);
+	try
+	{
+		if (m_activityLevel == a)
+			return;
+
+		if (!ageInputGood || !heightInputGood || !weightInputGood)
+			throw AnyInputException();
+
+		m_activityLevel = a;
+		calculate();
+		emit activityLevelChanged(m_activityLevel);
+	}
+	catch (AnyInputException e)
+	{
+		setResultMessage(e.what());
+	}
 }
 
 void BMRController::setResultMessage(QString m)

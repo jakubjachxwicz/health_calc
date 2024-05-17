@@ -270,7 +270,7 @@ ColumnLayout {
 		id: infoDialog
 		standardButtons: Dialog.Ok
 		title: "Informacje"
-		width: 460
+		width: 500
 
 		contentItem: ColumnLayout {
 			spacing: 20

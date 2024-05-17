@@ -23,6 +23,11 @@ class BMRController : public QObject
 
 	double BMR;
 
+	// validation flags
+	bool ageInputGood = true;
+	bool heightInputGood = true;
+	bool weightInputGood = true;
+
 	void calculate();
 public:
 	BMRController(QObject *parent);
