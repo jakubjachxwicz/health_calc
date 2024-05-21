@@ -44,8 +44,8 @@ GridLayout {
 		Layout.preferredWidth: parent.width * .25
 		Layout.preferredHeight: 30
 
-		onEditingFinished: BMRHandler.setAge(text)
-		text: BMRHandler.age
+		onEditingFinished: BMIHandler.setAge(text)
+		text: BMIHandler.age
 	}
 	TextField {
 		Layout.row: 2
@@ -53,8 +53,8 @@ GridLayout {
 		Layout.preferredHeight: 30
 		Layout.preferredWidth: parent.width * .25
 
-		onEditingFinished: BMRHandler.setHeight(text)
-		text: BMRHandler.height
+		onEditingFinished: BMIHandler.setHeight(text)
+		text: BMIHandler.height
 	}
 
 	GridLayout {
@@ -87,7 +87,7 @@ GridLayout {
 		Layout.margins: 80
 
 		font.pixelSize: 16
-		text: BMRHandler.resultMessage
+		text: BMIHandler.resultMessage
 	}
 
 	ColumnLayout {

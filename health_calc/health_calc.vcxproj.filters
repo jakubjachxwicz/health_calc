@@ -38,6 +38,9 @@
     <ClCompile Include="controllers\BMRController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BMIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml">
@@ -52,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="controllers\BMRController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BMIController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

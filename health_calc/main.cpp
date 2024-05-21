@@ -4,6 +4,7 @@
 #include <QIcon>
 
 #include "controllers/BMRController.h"
+#include "controllers/BMIController.h"
 
 int main(int argc, char *argv[])
 {
