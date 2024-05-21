@@ -59,5 +59,8 @@
     <ClInclude Include="BMRExceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BMIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
