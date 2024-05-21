@@ -3,6 +3,8 @@
 #include <QQmlContext>
 #include <QIcon>
 
+#include "DataExports.h"
+
 #include "controllers/BMRController.h"
 
 int main(int argc, char *argv[])
