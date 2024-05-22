@@ -16,6 +16,31 @@ void BMRController::calculate()
 	setResultMessage(msg);
 }
 
+void BMRController::exportToFile()
+{
+	const char* activityLevels[] = { "znikomy", "niski", "przecietny", "wysoki", "bardzo wysoki" };
+	
+	std::map<std::string, std::any> myData;
+	myData["naglowek"] = "Zapotrzebowanie kaloryczne";
+	myData["wzrost"] = m_height;
+	myData["waga"] = m_weight;
+	myData["wiek"] = m_age;
+	myData["wzrost"] = m_height;
+	myData["plec"] = (m_isMale ? "M" : "K");
+	myData["poziom_aktywnosci"] = activityLevels[m_activityLevel];
+	myData["wynik"] = BMR;
+
+	DataIO dataIO;
+	try
+	{
+		dataIO.ExportToFile(myData, "zapotrzebowanie_kaloryczne");
+	}
+	catch (std::ios_base::failure& e)
+	{
+		setResultMessage(e.what());
+	}
+}
+
 BMRController::BMRController(QObject* parent) : QObject(parent)
 {
 	m_age = 14;

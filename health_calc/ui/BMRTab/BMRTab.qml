@@ -253,6 +253,8 @@ ColumnLayout {
 		text: qsTr("Eksportuj do pliku")
 		implicitWidth: 213
 		implicitHeight: 41
+
+		onClicked: BMRHandler.exportToFile()
 	}
 
 	Button {

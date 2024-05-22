@@ -5,10 +5,10 @@
 #include <iostream>
 #include <map>
 #include <any>
+#include <fstream>
 
 class EXPORT_API DataIO
 {
 public:
-	std::any a = 1;
-	void ExportToFile(std::map<std::string, std::any> dataContainer, std::string fileName);
+	void ExportToFile(std::map<std::string, std::any> dataContainer, const std::string& fileName);
 };
