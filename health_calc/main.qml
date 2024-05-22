@@ -29,7 +29,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb3
-            text: qsTr("Sarny")
+            text: qsTr("Centyle")
         }
 
         HeaderTabButton {
@@ -63,7 +63,7 @@ ApplicationWindow {
         Item {
             id: tab3
             Text {
-                text: "Sarny"
+                text: "Centyle"
             }
         }
 
