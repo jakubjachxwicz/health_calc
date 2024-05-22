@@ -3,7 +3,7 @@
 
 void DataIO::ExportToFile(std::map<std::string, std::any> dataContainer, const std::string& fileName)
 {
-	std::ofstream file(fileName + ".csv");
+	std::ofstream file(fileName);
 
 	if (!file.is_open())
 		throw std::ios_base::failure("Problem z otwarciem pliku");

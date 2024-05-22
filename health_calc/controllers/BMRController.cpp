@@ -16,9 +16,11 @@ void BMRController::calculate()
 	setResultMessage(msg);
 }
 
-void BMRController::exportToFile()
+void BMRController::exportToFile(QString path)
 {
 	const char* activityLevels[] = { "znikomy", "niski", "przecietny", "wysoki", "bardzo wysoki" };
+
+	std::string finalPath = path.remove(0, 8).toStdString() + "/zapotrzebowanie_kaloryczne.csv";
 	
 	std::map<std::string, std::any> myData;
 	myData["naglowek"] = "Zapotrzebowanie kaloryczne";
@@ -33,7 +35,8 @@ void BMRController::exportToFile()
 	DataIO dataIO;
 	try
 	{
-		dataIO.ExportToFile(myData, "zapotrzebowanie_kaloryczne");
+		dataIO.ExportToFile(myData, finalPath);
+		setResultMessage("Dane zapisane w pliku zapotrzebowanie_kaloryczne.csv");
 	}
 	catch (std::ios_base::failure& e)
 	{

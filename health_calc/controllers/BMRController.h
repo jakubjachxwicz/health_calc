@@ -35,7 +35,7 @@ class BMRController : public QObject
 public:
 	BMRController(QObject *parent);
 
-	Q_INVOKABLE void exportToFile();
+	Q_INVOKABLE void exportToFile(QString path);
 
 	int getAge();
 	double getHeight();
