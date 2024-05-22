@@ -1,109 +1,115 @@
 ﻿import QtQuick 2.3
 import QtQuick.Layouts
 import QtQuick.Controls
+import QtQuick.Dialogs
 
 
-GridLayout {
+ColumnLayout {
+	width: parent.width * .8
 	anchors.horizontalCenter: parent.horizontalCenter
-	width: parent.width * .9
-	rows: 7
-	columns: 4
-
+	
 	Label {
-		Layout.row: 0
-		Layout.column: 0
-		Layout.columnSpan: 4
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-
-		width: parent.width
-		padding: 40
+		horizontalAlignment: Text.AlignHCenter
+		Layout.fillWidth: true
+		Layout.fillHeight: true
+		
+		wrapMode: Text.WrapAnywhere
+		padding: 36
 		text: "BMI"
 		font.pixelSize: 36
 	}
 
+	RowLayout {
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Wzrost (cm)"
+			}
+
+			TextField {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				onEditingFinished: BMIHandler.setHeight(text)
+				text: BMIHandler.height
+			}
+		}
+		ColumnLayout {
+			Label {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+
+				horizontalAlignment: Text.AlignHCenter
+				padding: 5
+				text: "Waga (kg)"
+			}
+
+			TextField {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+			
+				onEditingFinished: BMIHandler.setWeight(text)
+				text: BMIHandler.weight
+			}
+		}
+	}
+
 	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 1
+		Layout.fillWidth: true
+		Layout.fillHeight: true
+		Layout.margins: 60
 
-		padding: 5
-		text: "Wzrost (cm)"
-	}
-	Label {
-		Layout.row: 1
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 2
-
-		padding: 5
-		text: "Waga (kg)"
-	}
-
-	TextField {
-		Layout.row: 2
-		Layout.column: 1
-		Layout.preferredWidth: parent.width * .25
-		Layout.preferredHeight: 30
-
-		onEditingFinished: BMRHandler.setAge(text)
-		text: BMRHandler.age
-	}
-	TextField {
-		Layout.row: 2
-		Layout.column: 2
-		Layout.preferredHeight: 30
-		Layout.preferredWidth: parent.width * .25
-
-		onEditingFinished: BMRHandler.setHeight(text)
-		text: BMRHandler.height
-	}
-
-	GridLayout {
-		Layout.row: 4
-		Layout.column: 0
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.columnSpan: 4
-
-		width: parent.width
-
-		columns: 5
-		rows: 2
+		horizontalAlignment: Text.AlignHCenter
+		wrapMode: Text.WrapAnywhere
+		font.pixelSize: 16
+		text: BMIHandler.resultMessage
 	}
 
 	Button {
-		Layout.row: 5
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.column: 0
+		Layout.fillHeight: true
+		anchors.right: parent.right
 
-		implicitWidth: 294
-		implicitHeight: 64
-		text: qsTr("Oblicz")
+		text: qsTr("Eksportuj do pliku")
+		implicitWidth: 213
+		implicitHeight: 41
 	}
 
-	Label {
-		Layout.row: 5
-		Layout.column: 1
-		Layout.columnSpan: 3
-		Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-		Layout.margins: 80
+	Button {
+		Layout.fillHeight: true
+		anchors.right: parent.right
+	
+		text: qsTr("Informacje")
+		implicitWidth: 213
+		implicitHeight: 41
 
-		font.pixelSize: 16
-		text: BMRHandler.resultMessage
+		onClicked: infoDialog.open()
 	}
 
-	ColumnLayout {
-		Layout.row: 6
-		Layout.column: 3
+	Dialog {
+		id: infoDialog
+		standardButtons: Dialog.Ok
+		title: "Informacje"
+		width: 500
 
-		Button {
-			text: qsTr("Eksportuj do pliku")
-			implicitWidth: 213
-			implicitHeight: 41
-		}
-		Button {
-			text: qsTr("Informacje")
-			implicitWidth: 213
-			implicitHeight: 41
+		contentItem: ColumnLayout {
+			spacing: 20
+
+			Text {
+				Layout.fillWidth: true
+				Layout.fillHeight: true
+				wrapMode: Text.WordWrap
+				text: "BMI (Body Mass Index) to wskaźnik masy ciała w stosunku do wzrostu, który jest powszechnie używany do oceny, czy dana osoba ma prawidłową masę ciała w stosunku do swojego wzrostu."
+			}
+			Text {
+				Layout.fillWidth: true
+				Layout.fillHeight: true	
+				wrapMode: Text.WordWrap
+				text: "Wzór:\nBMI=masa/(wzrost*wzrost)"
+			}
 		}
 	}
 }
-

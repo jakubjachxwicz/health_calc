@@ -6,6 +6,7 @@
 #include "DataExports.h"
 
 #include "controllers/BMRController.h"
+#include "controllers/BMIController.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon(":/qt/qml/health_calc/ui/Assets/favicon.png"));
 
     BMRController m_BMRHandler(nullptr);
+    BMIController m_BMIHandler(nullptr);
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/qt/qml/health_calc/main.qml")));
@@ -26,6 +28,6 @@ int main(int argc, char *argv[])
 
     QQmlContext* context(engine.rootContext());
     context->setContextProperty("BMRHandler", &m_BMRHandler);
-
+    context->setContextProperty("BMIHandler", &m_BMIHandler);
     return app.exec();
 }
