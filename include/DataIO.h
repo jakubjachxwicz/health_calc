@@ -2,7 +2,7 @@
 
 #include "API.h"
 
-class EXPORT_API DataExport
+class EXPORT_API DataIO
 {
 public:
 	void test();

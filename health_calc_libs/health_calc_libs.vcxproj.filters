@@ -18,12 +18,12 @@
     <ClInclude Include="API.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataExport.h">
+    <ClInclude Include="DataIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DataExport.cpp">
+    <ClCompile Include="DataIO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
