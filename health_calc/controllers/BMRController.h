@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QObject>
+#include <DataIO.h>
+#include <map>
+#include <any>
 
 class BMRController : public QObject
 {
@@ -31,6 +34,8 @@ class BMRController : public QObject
 	void calculate();
 public:
 	BMRController(QObject *parent);
+
+	Q_INVOKABLE void exportToFile(QString path);
 
 	int getAge();
 	double getHeight();

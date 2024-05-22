@@ -253,6 +253,8 @@ ColumnLayout {
 		text: qsTr("Eksportuj do pliku")
 		implicitWidth: 213
 		implicitHeight: 41
+
+		onClicked: folderDialog.open()
 	}
 
 	Button {
@@ -288,5 +290,11 @@ ColumnLayout {
 				text: "Wzór:\nDla mężczyzn: 66.47 + (13.75 * masa [kg]) + (5.003 * wzrost [cm]) − (6.755 * wiek [lata])\nDla kobiet: 655.1 + (9.563 * masa [kg]) + (1.85 * wzrost [cm]) − (4.676 * wiek [lata])\nDodatkowe mnożniki w zależności od poziomu aktywności fizycznej:\nZnikomy: 1,2\nLekki: 1,375\nPrzeciętny: 1,55\nWysoki: 1,725\nBardzo wysoki: 1,9"
 			}
 		}
+	}
+
+	FolderDialog {
+		id: folderDialog
+		currentFolder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+		onAccepted: BMRHandler.exportToFile(currentFolder)
 	}
 }
