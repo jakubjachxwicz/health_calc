@@ -111,9 +111,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y "$(ProjectDir)*.h" "$(SolutionDir)include"
+      <Command>copy /Y "$(ProjectDir)*.h" "$(SolutionDir)include"
 copy /Y "$(SolutionDir)x64\Debug\*.dll" "$(SolutionDir)bin"
-copy /Y "$(SolutionDir)x64\Debug\*lib" "$(SolutionDir)lib"</Command>
+copy /Y "$(SolutionDir)x64\Debug\*lib" "$(SolutionDir)lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
