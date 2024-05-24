@@ -1,6 +1,9 @@
 #pragma once
 
 #include <QObject>
+#include <DataIO.h>
+#include <map>
+#include <any>
 
 class BMIController : public QObject
 {
@@ -23,6 +26,8 @@ class BMIController : public QObject
 	void calculate();
 public:
 	BMIController(QObject* parent);
+
+	Q_INVOKABLE void exportToFile(QString path);
 
 	double getHeight();
 	double getWeight();

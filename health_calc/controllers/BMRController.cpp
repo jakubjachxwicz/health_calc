@@ -27,7 +27,6 @@ void BMRController::exportToFile(QString path)
 	myData["wzrost"] = m_height;
 	myData["waga"] = m_weight;
 	myData["wiek"] = m_age;
-	myData["wzrost"] = m_height;
 	myData["plec"] = (m_isMale ? "M" : "K");
 	myData["poziom_aktywnosci"] = activityLevels[m_activityLevel];
 	myData["wynik"] = BMR;

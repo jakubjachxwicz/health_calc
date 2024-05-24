@@ -27,6 +27,27 @@ void BMIController::calculate()
 	}
 }
 
+void BMIController::exportToFile(QString path)
+{
+	std::string finalPath = path.remove(0, 8).toStdString() + "/bmi.csv";
+
+	std::map<std::string, std::any> myData;
+	myData["wzrost"] = m_height;
+	myData["waga"] = m_weight;
+	myData["wynik"] = BMI;
+
+	DataIO dataIO;
+	try
+	{
+		dataIO.ExportToFile(myData, finalPath);
+		setResultMessage("Dane zapisane w pliku bmi.csv");
+	}
+	catch (std::ios_base::failure& e)
+	{
+		setResultMessage(e.what());
+	}
+}
+
 BMIController::BMIController(QObject* parent) : QObject(parent)
 {
 	m_height = 198;

@@ -41,6 +41,9 @@
     <ClCompile Include="BMIController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml">
@@ -50,6 +53,9 @@
       <Filter>Resource Files\ui</Filter>
     </None>
     <None Include="ui\BMI\BMI.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
+    <None Include="ui\User\User.qml">
       <Filter>Resource Files\ui</Filter>
     </None>
   </ItemGroup>
@@ -65,5 +71,16 @@
     <ClInclude Include="BMRExceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="health_calc.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
