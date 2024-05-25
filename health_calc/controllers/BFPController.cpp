@@ -1,7 +1,6 @@
 #include "BFPController.h"
 #include "BMRExceptions.h"
 
-
 void BFPController::calculate()
 {
 	if (m_isMale)
@@ -12,9 +11,121 @@ void BFPController::calculate()
 	{
 		BFP = (1.20 * m_weight / ((m_height / 100) * (m_height / 100))) + (0.23 * m_age) - 5.4;
 	}
-
-	QString msg = QString("Twoje BFP: %1 %").arg(BFP);
-	setResultMessage(msg);
+	
+	if (m_isMale)
+	{
+		if (m_age < 40)
+		{
+			if (BFP < 8)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 20)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+		else if (m_age < 60)
+		{
+			if (BFP < 11)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 22)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+		else
+		{
+			if (BFP < 13)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 25)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+	}
+	else
+	{
+			if (m_age < 40)
+		{
+			if (BFP < 21)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 33)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+		else if (m_age < 60)
+		{
+			if (BFP < 23)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 34)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+		else
+		{
+			if (BFP < 24)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else if (BFP < 36)
+			{
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				setResultMessage(msg);
+			}
+			else
+			{
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				setResultMessage(msg);
+			}
+		}
+	}
 }
 
 void BFPController::exportToFile(QString path)

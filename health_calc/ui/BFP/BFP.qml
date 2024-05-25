@@ -3,7 +3,6 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Dialogs
 
-
 ColumnLayout {
 	width: parent.width * .8
 	anchors.horizontalCenter: parent.horizontalCenter

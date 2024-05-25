@@ -8,6 +8,7 @@
 #include "controllers/BMRController.h"
 #include "controllers/BMIController.h"
 #include "controllers/BFPController.h"
+#include "controllers/MacroController.h"
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     BMRController m_BMRHandler(nullptr);
     BMIController m_BMIHandler(nullptr);
     BFPController m_BFPHandler(nullptr);
+    MacroController m_MacroHandler(nullptr);
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/qt/qml/health_calc/main.qml")));
@@ -32,5 +34,6 @@ int main(int argc, char *argv[])
     context->setContextProperty("BMRHandler", &m_BMRHandler);
     context->setContextProperty("BMIHandler", &m_BMIHandler);
     context->setContextProperty("BFPHandler", &m_BFPHandler);
+    context->setContextProperty("MacroHandler", &m_MacroHandler);
     return app.exec();
 }

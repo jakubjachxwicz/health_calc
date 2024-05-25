@@ -7,5 +7,6 @@
         <file>ui/BMI/BMI.qml</file>
         <file>ui/User/User.qml</file>
         <file>ui/BFP/BFP.qml</file>
+        <file>ui/Macro/Macro.qml</file>
     </qresource>
 </RCC>
