@@ -32,6 +32,7 @@ void BMIController::exportToFile(QString path)
 	std::string finalPath = path.remove(0, 8).toStdString() + "/bmi.csv";
 
 	std::map<std::string, std::any> myData;
+	myData["naglowek"] = "BMI";
 	myData["wzrost"] = m_height;
 	myData["waga"] = m_weight;
 	myData["wynik"] = BMI;

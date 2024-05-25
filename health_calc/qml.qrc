@@ -6,5 +6,6 @@
         <file>ui/BMRTab/BMRTab.qml</file>
         <file>ui/BMI/BMI.qml</file>
         <file>ui/User/User.qml</file>
+        <file>ui/BFP/BFP.qml</file>
     </qresource>
 </RCC>

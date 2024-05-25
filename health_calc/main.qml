@@ -4,8 +4,9 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 import "ui/HeaderTabButton"
-import "ui/BMRTab"
 import "ui/BMI"
+import "ui/BMRTab"
+import "ui/BFP"
 import "ui/User"
 
 ApplicationWindow {
@@ -30,7 +31,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb3
-            text: qsTr("Centyle")
+            text: qsTr("BFP")
         }
 
         HeaderTabButton {
@@ -63,9 +64,7 @@ ApplicationWindow {
 
         Item {
             id: tab3
-            Text {
-                text: "Centyle"
-            }
+            BFP {}
         }
 
         Item {

@@ -38,10 +38,13 @@
     <ClCompile Include="controllers\BMRController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BMIController.cpp">
+    <ClCompile Include="controllers\UserController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UserController.cpp">
+    <ClCompile Include="controllers\BMIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controllers\BFPController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,12 +61,18 @@
     <None Include="ui\User\User.qml">
       <Filter>Resource Files\ui</Filter>
     </None>
+    <None Include="ui\BFP\BFP.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="controllers\BMRController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="BMIController.h">
+    <QtMoc Include="controllers\BMIController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="controllers\BFPController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -74,7 +83,7 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UserController.h">
+    <ClInclude Include="controllers\UserController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

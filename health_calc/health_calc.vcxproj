@@ -100,10 +100,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BMIController.cpp" />
+    <ClCompile Include="controllers\BFPController.cpp" />
+    <ClCompile Include="controllers\BMIController.cpp" />
     <ClCompile Include="controllers\BMRController.cpp" />
+    <ClCompile Include="controllers\UserController.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="UserController.cpp" />
+    <None Include="ui\BFP\BFP.qml" />
     <None Include="ui\BMI\BMI.qml" />
     <None Include="ui\BMRTab\BMRTab.qml" />
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml" />
@@ -115,9 +117,10 @@
     <QtMoc Include="controllers\BMRController.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="controllers\BMIController.h" />
+    <QtMoc Include="controllers\BFPController.h" />
+    <ClInclude Include="controllers\UserController.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="UserController.h" />
-    <QtMoc Include="BMIController.h" />
     <ClInclude Include="BMRExceptions.h" />
   </ItemGroup>
   <ItemGroup>
