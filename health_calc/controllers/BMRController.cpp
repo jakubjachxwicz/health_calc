@@ -1,5 +1,5 @@
 #include "BMRController.h"
-#include "BMRExceptions.h"
+#include "CustomExceptions.h"
 
 
 void BMRController::calculate()

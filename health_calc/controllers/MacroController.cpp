@@ -1,5 +1,5 @@
 ﻿#include "MacroController.h"
-#include "BMRExceptions.h"
+#include "CustomExceptions.h"
 
 void MacroController::calculate()
 {

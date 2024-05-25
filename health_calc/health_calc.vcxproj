@@ -122,9 +122,9 @@
     <QtMoc Include="controllers\BMIController.h" />
     <QtMoc Include="controllers\BFPController.h" />
     <QtMoc Include="controllers\MacroController.h" />
-    <ClInclude Include="controllers\UserController.h" />
+    <QtMoc Include="controllers\UserController.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="BMRExceptions.h" />
+    <ClInclude Include="CustomExceptions.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="health_calc.rc" />

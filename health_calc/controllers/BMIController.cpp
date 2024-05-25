@@ -1,5 +1,5 @@
 #include "BMIController.h"
-#include "BMRExceptions.h"
+#include "CustomExceptions.h"
 
 void BMIController::calculate()
 {

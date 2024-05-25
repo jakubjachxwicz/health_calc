@@ -67,36 +67,36 @@ ColumnLayout
 			{
 				Layout.fillWidth: true
 				Layout.fillHeight: true
-				onEditingFinished: BMRHandler.setHeight(text)
-				text: BMRHandler.height
+				onEditingFinished: UserHandler.setFirstName(text)
+				text: UserHandler.firstName
 			}
 			TextField
 			{
 				Layout.fillWidth: true
 				Layout.fillHeight: true
-				onEditingFinished: BMRHandler.setHeight(text)
-				text: BMRHandler.height
+				onEditingFinished: UserHandler.setLastName(text)
+				text: UserHandler.lastName
 			}
 			TextField
 			{
 				Layout.fillWidth: true
 				Layout.fillHeight: true
-				onEditingFinished: BMRHandler.setHeight(text)
-				text: BMRHandler.height
+				onEditingFinished: UserHandler.setAge(text)
+				text: UserHandler.age
 			}
 			TextField
 			{
 				Layout.fillWidth: true
 				Layout.fillHeight: true
-				onEditingFinished: BMRHandler.setHeight(text)
-				text: BMRHandler.height
+				onEditingFinished: UserHandler.setWeight(text)
+				text: UserHandler.weight
 			}
 			TextField
 			{
 				Layout.fillWidth: true
 				Layout.fillHeight: true
-				onEditingFinished: BMRHandler.setHeight(text)
-				text: BMRHandler.height
+				onEditingFinished: UserHandler.setHeight(text)
+				text: UserHandler.height
 			}
 			RowLayout {
 				RadioButton {
@@ -105,10 +105,10 @@ ColumnLayout
 					Layout.fillHeight: true
 
 					text: qsTr("K")
-					checked: (BMRHandler.isMale ? false : true)
+					checked: (UserHandler.isMale ? false : true)
 					MouseArea {
 						anchors.fill: parent
-						onClicked: BMRHandler.setIsMale(false);
+						onClicked: UserHandler.setIsMale(false);
 					}
 				}
 				RadioButton {
@@ -117,14 +117,24 @@ ColumnLayout
 					Layout.fillHeight: true
 
 					text: qsTr("M")
-					checked: (BMRHandler.isMale ? true : false)
+					checked: (UserHandler.isMale ? true : false)
 					MouseArea {
 						anchors.fill: parent
-						onClicked: BMRHandler.setIsMale(true);
+						onClicked: UserHandler.setIsMale(true);
 					}
 				}
 			}
 		}
-		
+	}
+
+	Button {
+		// Layout.fillHeight: true
+		anchors.horizontalCenter: parent
+	
+		text: qsTr("Zapisz")
+		implicitWidth: 213
+		implicitHeight: 41
+
+		onClicked: UserHandler.save();
 	}
 }

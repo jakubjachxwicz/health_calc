@@ -21,9 +21,15 @@
     <ClInclude Include="DataIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataCourier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataCourier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

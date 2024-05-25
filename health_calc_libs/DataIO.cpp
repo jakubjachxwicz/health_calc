@@ -29,3 +29,47 @@ void DataIO::ExportToFile(std::map<std::string, std::any> dataContainer, const s
 	if (file.fail())
 		throw std::ios_base::failure("Problem z zamknieciem pliku");
 }
+
+void DataIO::SaveUserData(DataCourier& dataContainer)
+{
+	PWSTR path = nullptr;
+	HRESULT hr = SHGetKnownFolderPath(FOLDERID_Documents, 0, NULL, &path);
+
+	if (SUCCEEDED(hr)) {
+		char charPath[MAX_PATH];
+		size_t convertedChars = 0;
+		wcstombs_s(&convertedChars, charPath, path, MAX_PATH);
+
+		std::string filePath = charPath;
+		filePath += "\\HealthCalc\\userdata.txt";
+
+		CoTaskMemFree(path);
+
+
+		std::ofstream output("C:\\Users\\KubaJ\\Documents\\HealthCalc\\userdata.txt", std::ios::out);
+
+		if (!output.is_open())
+			throw std::ios_base::failure("Problem z otwarciem pliku");
+
+		// First name
+		// Last name
+		// Age
+		// Weight
+		// Height
+		// Is male
+		//output << dataContainer.getFirstName() << std::endl;
+		//output << dataContainer.getLastName() << std::endl;
+		output << dataContainer.getAge() << std::endl;
+		output << dataContainer.getWeight() << std::endl;
+		output << dataContainer.getHeight() << std::endl;
+		output << (dataContainer.getIsMale() ? "male" : "female") << std::endl;
+
+		
+		if (output.fail())
+			throw std::ios_base::failure("Problem z zapisem do pliku");
+
+		output.close();
+		if (output.fail())
+			throw std::ios_base::failure("Problem z zamknieciem pliku");
+	}
+}
