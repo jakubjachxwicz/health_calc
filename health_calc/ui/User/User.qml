@@ -125,6 +125,14 @@ ColumnLayout
 				}
 			}
 		}
-		
+	}
+
+	Button {
+		// Layout.fillHeight: true
+		anchors.horizontalCenter: parent
+	
+		text: qsTr("Zapisz")
+		implicitWidth: 213
+		implicitHeight: 41
 	}
 }

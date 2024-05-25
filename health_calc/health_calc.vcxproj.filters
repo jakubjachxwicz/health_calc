@@ -84,15 +84,15 @@
     <QtMoc Include="controllers\MacroController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="controllers\UserController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BMRExceptions.h">
+    <ClInclude Include="CustomExceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="controllers\UserController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
