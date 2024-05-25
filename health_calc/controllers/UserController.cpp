@@ -1,7 +1,19 @@
 #include "UserController.h"
 
-UserController::UserController(QObject* parent)
+
+void UserController::save()
 {
+
+}
+
+UserController::UserController(QObject* parent, DataCourier* dc)
+{
+	m_firstName = QString::fromStdString(dc->getFirstName());
+	m_lastName = QString::fromStdString(dc->getLastName());
+	m_age = dc->getAge();
+	m_height = dc->getHeight();
+	m_weight = dc->getWeight();
+	m_isMale = dc->getIsMale();
 }
 
 QString UserController::getFirstName()
@@ -32,11 +44,6 @@ double UserController::getHeight()
 bool UserController::getIsMale()
 {
 	return m_isMale;
-}
-
-double UserController::getBmr()
-{
-	return m_bmr;
 }
 
 void UserController::setLastName(QString lName)
@@ -83,16 +90,6 @@ void UserController::setIsMale(bool ismale)
 	m_isMale = ismale;
 	emit isMaleChanged(m_isMale);
 }
-
-void UserController::setBmr(double bmr)
-{
-	if (m_bmr == bmr)
-		return;
-
-	m_bmr = bmr;
-	emit bmrChanged(m_bmr);
-}
-
 
 void UserController::setFirstName(QString fName)
 {

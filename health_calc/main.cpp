@@ -9,6 +9,8 @@
 #include "controllers/BMIController.h"
 #include "controllers/BFPController.h"
 #include "controllers/MacroController.h"
+#include "controllers/UserController.h"
+#include "DataCourier.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,10 +22,13 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon(":/qt/qml/health_calc/ui/Assets/favicon.png"));
 
+    DataCourier dataCourier;
+
     BMRController m_BMRHandler(nullptr);
     BMIController m_BMIHandler(nullptr);
     BFPController m_BFPHandler(nullptr);
     MacroController m_MacroHandler(nullptr);
+    UserController m_userHandler(nullptr, &dataCourier);
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/qt/qml/health_calc/main.qml")));
@@ -35,5 +40,7 @@ int main(int argc, char *argv[])
     context->setContextProperty("BMIHandler", &m_BMIHandler);
     context->setContextProperty("BFPHandler", &m_BFPHandler);
     context->setContextProperty("MacroHandler", &m_MacroHandler);
+    context->setContextProperty("UserHandler", &m_userHandler);
+
     return app.exec();
 }

@@ -29,3 +29,8 @@ void DataIO::ExportToFile(std::map<std::string, std::any> dataContainer, const s
 	if (file.fail())
 		throw std::ios_base::failure("Problem z zamknieciem pliku");
 }
+
+void DataIO::SaveUserData(std::vector<std::any> dataContainer)
+{
+
+}
