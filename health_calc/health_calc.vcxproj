@@ -100,12 +100,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BMIController.cpp" />
+    <ClCompile Include="controllers\BFPController.cpp" />
+    <ClCompile Include="controllers\BMIController.cpp" />
     <ClCompile Include="controllers\BMRController.cpp" />
+    <ClCompile Include="controllers\UserController.cpp" />
     <ClCompile Include="main.cpp" />
+    <None Include="ui\BFP\BFP.qml" />
     <None Include="ui\BMI\BMI.qml" />
     <None Include="ui\BMRTab\BMRTab.qml" />
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml" />
+    <None Include="ui\User\User.qml" />
     <QtRcc Include="qml.qrc" />
     <None Include="main.qml" />
   </ItemGroup>
@@ -113,8 +117,14 @@
     <QtMoc Include="controllers\BMRController.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="BMIController.h" />
+    <QtMoc Include="controllers\BMIController.h" />
+    <QtMoc Include="controllers\BFPController.h" />
+    <ClInclude Include="controllers\UserController.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="BMRExceptions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="health_calc.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

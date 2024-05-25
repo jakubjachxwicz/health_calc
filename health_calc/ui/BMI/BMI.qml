@@ -76,6 +76,8 @@ ColumnLayout {
 		text: qsTr("Eksportuj do pliku")
 		implicitWidth: 213
 		implicitHeight: 41
+
+		onClicked: folderDialog.open()
 	}
 
 	Button {
@@ -111,5 +113,10 @@ ColumnLayout {
 				text: "Wzór:\nBMI=masa/(wzrost*wzrost)"
 			}
 		}
+	}
+	FolderDialog {
+	id: folderDialog
+	currentFolder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+	onAccepted: BMIHandler.exportToFile(currentFolder)
 	}
 }

@@ -1,41 +1,39 @@
-#include "BMRController.h"
+#include "BFPController.h"
 #include "BMRExceptions.h"
 
 
-void BMRController::calculate()
+void BFPController::calculate()
 {
 	if (m_isMale)
-		BMR = 66.47 + (13.75 * m_weight) + (5.003 * m_height) - (6.755 * m_age);
+	{
+		BFP = (1.20 * m_weight / ((m_height / 100) * (m_height / 100))) + (0.23 * m_age) - 16.2;
+	}
 	else
-		BMR = 655.1 + (9.563 * m_weight) + (1.85 * m_height) - (4.676 * m_age);
+	{
+		BFP = (1.20 * m_weight / ((m_height / 100) * (m_height / 100))) + (0.23 * m_age) - 5.4;
+	}
 
-	double multipliers[5] = { 1.2, 1.375, 1.55, 1.725, 1.9 };
-	BMR *= multipliers[m_activityLevel];
-
-	QString msg = QString("Twoje dzienne zapotrzebowanie kaloryczne: %1 kcal").arg(BMR);
+	QString msg = QString("Twoje BFP: %1 %").arg(BFP);
 	setResultMessage(msg);
 }
 
-void BMRController::exportToFile(QString path)
+void BFPController::exportToFile(QString path)
 {
-	const char* activityLevels[] = { "znikomy", "niski", "przecietny", "wysoki", "bardzo wysoki" };
+	std::string finalPath = path.remove(0, 8).toStdString() + "/bfp.csv";
 
-	std::string finalPath = path.remove(0, 8).toStdString() + "/zapotrzebowanie_kaloryczne.csv";
-	
 	std::map<std::string, std::any> myData;
-	myData["naglowek"] = "Zapotrzebowanie kaloryczne";
+	myData["naglowek"] = "BFP";
 	myData["wzrost"] = m_height;
 	myData["waga"] = m_weight;
 	myData["wiek"] = m_age;
 	myData["plec"] = (m_isMale ? "M" : "K");
-	myData["poziom_aktywnosci"] = activityLevels[m_activityLevel];
-	myData["wynik"] = BMR;
+	myData["wynik"] = BFP;
 
 	DataIO dataIO;
 	try
 	{
 		dataIO.ExportToFile(myData, finalPath);
-		setResultMessage("Dane zapisane w pliku zapotrzebowanie_kaloryczne.csv");
+		setResultMessage("Dane zapisane w pliku bfp.csv");
 	}
 	catch (std::ios_base::failure& e)
 	{
@@ -43,49 +41,43 @@ void BMRController::exportToFile(QString path)
 	}
 }
 
-BMRController::BMRController(QObject* parent) : QObject(parent)
+BFPController::BFPController(QObject* parent) : QObject(parent)
 {
 	m_age = 14;
 	m_height = 185.9;
 	m_weight = 95.14;
 	m_isMale = true;
-	m_activityLevel = 0;
 	m_resultMessage = "";
 
 	calculate();
 }
 
-int BMRController::getAge()
+int BFPController::getAge()
 {
 	return m_age;
 }
 
-double BMRController::getHeight()
+double BFPController::getHeight()
 {
 	return m_height;
 }
 
-double BMRController::getWeight()
+double BFPController::getWeight()
 {
 	return m_weight;
 }
 
-bool BMRController::getIsMale()
+bool BFPController::getIsMale()
 {
 	return m_isMale;
 }
 
-int BMRController::getActivityLevel()
-{
-	return m_activityLevel;
-}
-
-QString BMRController::getResultMessage()
+QString BFPController::getResultMessage()
 {
 	return m_resultMessage;
 }
 
-void BMRController::setAge(int a)
+void BFPController::setAge(int a)
 {
 	try
 	{
@@ -115,7 +107,7 @@ void BMRController::setAge(int a)
 	}
 }
 
-void BMRController::setHeight(double h)
+void BFPController::setHeight(double h)
 {
 	try
 	{
@@ -145,7 +137,7 @@ void BMRController::setHeight(double h)
 	}
 }
 
-void BMRController::setIsMale(bool i)
+void BFPController::setIsMale(bool i)
 {
 	try
 	{
@@ -165,7 +157,7 @@ void BMRController::setIsMale(bool i)
 	}
 }
 
-void BMRController::setWeight(double w)
+void BFPController::setWeight(double w)
 {
 	try
 	{
@@ -195,27 +187,7 @@ void BMRController::setWeight(double w)
 	}
 }
 
-void BMRController::setActivityLevel(int a)
-{
-	try
-	{
-		if (m_activityLevel == a)
-			return;
-
-		if (!ageInputGood || !heightInputGood || !weightInputGood)
-			throw AnyInputException();
-
-		m_activityLevel = a;
-		calculate();
-		emit activityLevelChanged(m_activityLevel);
-	}
-	catch (AnyInputException e)
-	{
-		setResultMessage(e.what());
-	}
-}
-
-void BMRController::setResultMessage(QString m)
+void BFPController::setResultMessage(QString m)
 {
 	if (m_resultMessage == m)
 		return;

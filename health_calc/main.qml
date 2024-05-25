@@ -1,11 +1,13 @@
-import QtQuick 2.9
+﻿import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls
 import QtQuick.Layouts
 
 import "ui/HeaderTabButton"
-import "ui/BMRTab"
 import "ui/BMI"
+import "ui/BMRTab"
+import "ui/BFP"
+import "ui/User"
 
 ApplicationWindow {
     visible: true
@@ -29,7 +31,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb3
-            text: qsTr("Centyle")
+            text: qsTr("BFP")
         }
 
         HeaderTabButton {
@@ -39,7 +41,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb5
-            text: qsTr("Lisy")
+            text: qsTr("Dane użytkownika")
         }
     }
 
@@ -62,9 +64,7 @@ ApplicationWindow {
 
         Item {
             id: tab3
-            Text {
-                text: "Centyle"
-            }
+            BFP {}
         }
 
         Item {
@@ -76,9 +76,7 @@ ApplicationWindow {
 
         Item {
             id: tab5
-            Text {
-                text: "Lisy"
-            }
+            User {}
         }
     }
 }
