@@ -7,6 +7,7 @@ import "ui/HeaderTabButton"
 import "ui/BMI"
 import "ui/BMRTab"
 import "ui/BFP"
+import "ui/Macro"
 import "ui/User"
 
 ApplicationWindow {
@@ -36,7 +37,7 @@ ApplicationWindow {
 
         HeaderTabButton {
             id: htb4
-            text: qsTr("Dziki")
+            text: qsTr("Makroskładniki")
         }
 
         HeaderTabButton {
@@ -53,8 +54,7 @@ ApplicationWindow {
 
         Item {
             id: tab1
-            BMI {
-            }
+            BMI {}
         }
 
         Item {
@@ -69,9 +69,7 @@ ApplicationWindow {
 
         Item {
             id: tab4
-            Text {
-                text: "Dziki"
-            }
+            Macro {}
         }
 
         Item {

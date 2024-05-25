@@ -47,6 +47,9 @@
     <ClCompile Include="controllers\BFPController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="controllers\MacroController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ui\HeaderTabButton\HeaderTabButton.qml">
@@ -64,6 +67,9 @@
     <None Include="ui\BFP\BFP.qml">
       <Filter>Resource Files\ui</Filter>
     </None>
+    <None Include="ui\Macro\Macro.qml">
+      <Filter>Resource Files\ui</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="controllers\BMRController.h">
@@ -73,6 +79,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="controllers\BFPController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="controllers\MacroController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
