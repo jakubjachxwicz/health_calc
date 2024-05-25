@@ -34,6 +34,8 @@ public:
 	double getHeight();
 	bool getIsMale();
 
+	DataCourier* courier;
+
 public slots:
 	void setFirstName(QString fName);
 	void setLastName(QString lName);

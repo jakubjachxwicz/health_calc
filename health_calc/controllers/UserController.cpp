@@ -1,19 +1,23 @@
 #include "UserController.h"
+#include "DataIO.h"
 
 
 void UserController::save()
 {
-
+	DataIO io;
+	io.SaveUserData(*courier);
 }
 
 UserController::UserController(QObject* parent, DataCourier* dc)
 {
-	m_firstName = QString::fromStdString(dc->getFirstName());
-	m_lastName = QString::fromStdString(dc->getLastName());
+	m_firstName = QString::fromStdWString(dc->getFirstName());
+	m_lastName = QString::fromStdWString(dc->getLastName());
 	m_age = dc->getAge();
 	m_height = dc->getHeight();
 	m_weight = dc->getWeight();
 	m_isMale = dc->getIsMale();
+
+	courier = dc;
 }
 
 QString UserController::getFirstName()
@@ -33,7 +37,7 @@ int UserController::getAge()
 
 double UserController::getWeight()
 {
-	return m_height;
+	return m_weight;
 }
 
 double UserController::getHeight()

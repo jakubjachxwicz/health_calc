@@ -7,8 +7,8 @@
 
 class EXPORT_API DataCourier
 {
-	std::string firstName;
-	std::string lastName;
+	std::wstring firstName;
+	std::wstring lastName;
 	int age;
 	double weight;
 	double height;
@@ -18,16 +18,16 @@ class EXPORT_API DataCourier
 public:
 	DataCourier();
 
-	std::string getFirstName();
-	std::string getLastName();
+	std::wstring getFirstName();
+	std::wstring getLastName();
 	int getAge();
 	double getWeight();
 	double getHeight();
 	bool getIsMale();
 	double getBmr();
 
-	void setFirstName(std::string fName);
-	void setLastName(std::string lName);
+	void setFirstName(std::wstring fName);
+	void setLastName(std::wstring lName);
 	void setAge(int a);
 	void setWeight(double w);
 	void setHeight(double h);

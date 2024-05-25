@@ -3,14 +3,13 @@
 #include <QQmlContext>
 #include <QIcon>
 
-// #include "DataIO.h"
-
 #include "controllers/BMRController.h"
 #include "controllers/BMIController.h"
 #include "controllers/BFPController.h"
 #include "controllers/MacroController.h"
 #include "controllers/UserController.h"
 #include "DataCourier.h"
+
 
 int main(int argc, char *argv[])
 {

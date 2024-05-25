@@ -3,8 +3,8 @@
 
 DataCourier::DataCourier()
 {
-    firstName = "Michael";
-    lastName = "Jordan";
+    firstName = L"Michael";
+    lastName = L"Jordan";
     age = 61;
     height = 198;
     weight = 98;
@@ -12,12 +12,12 @@ DataCourier::DataCourier()
     bmr = 3785.77;
 }
 
-std::string DataCourier::getFirstName()
+std::wstring DataCourier::getFirstName()
 {
     return firstName;
 }
 
-std::string DataCourier::getLastName()
+std::wstring DataCourier::getLastName()
 {
     return lastName;
 }
@@ -47,12 +47,12 @@ double DataCourier::getBmr()
     return bmr;
 }
 
-void DataCourier::setFirstName(std::string fName)
+void DataCourier::setFirstName(std::wstring fName)
 {
     firstName = fName;
 }
 
-void DataCourier::setLastName(std::string lName)
+void DataCourier::setLastName(std::wstring lName)
 {
     lastName = lName;
 }
