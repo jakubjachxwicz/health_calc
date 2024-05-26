@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <filesystem>
 #include "DataCourier.h"
 
 
@@ -15,12 +16,16 @@ class UserController : public QObject
 	Q_PROPERTY(double height READ getHeight WRITE setHeight NOTIFY heightChanged)
 	Q_PROPERTY(bool isMale READ getIsMale WRITE setIsMale NOTIFY isMaleChanged)
 
+	Q_PROPERTY(QString infoMessage READ getInfoMessage WRITE setInfoMessage NOTIFY infoMessageChanged)
+
 	QString m_firstName;
 	QString m_lastName;
 	int m_age;
 	double m_weight;
 	double m_height;
 	bool m_isMale;
+
+	QString m_infoMessage;
 
 public:
 	UserController(QObject* parent, DataCourier* dc);
@@ -34,6 +39,8 @@ public:
 	double getHeight();
 	bool getIsMale();
 
+	QString getInfoMessage();
+
 	DataCourier* courier;
 
 public slots:
@@ -44,6 +51,8 @@ public slots:
 	void setHeight(double h);
 	void setIsMale(bool ismale);
 
+	void setInfoMessage(QString ms);
+
 signals:
 	void firstNameChanged(QString fName);
 	void lastNameChanged(QString fName);
@@ -51,4 +60,6 @@ signals:
 	void weightChanged(double w);
 	void heightChanged(double h);
 	void isMaleChanged(bool ismale);
+
+	void infoMessageChanged(QString ms);
 };

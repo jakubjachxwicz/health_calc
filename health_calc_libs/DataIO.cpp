@@ -75,4 +75,6 @@ void DataIO::SaveUserData(DataCourier& dataContainer)
 		if (output.fail())
 			throw std::ios_base::failure("Problem z zamknieciem pliku");
 	}
+
+	else throw std::ios_base::failure("Problem ze sciezka do katalogu");
 }
