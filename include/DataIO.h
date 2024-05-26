@@ -1,5 +1,6 @@
 #pragma once
 #pragma comment(lib, "shell32.lib")
+#define _SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING
 
 #include "API.h"
 #include "DataCourier.h"
@@ -8,9 +9,11 @@
 #include <map>
 #include <any>
 #include <fstream>
+#include <codecvt>
 #include <vector>
 #include <windows.h>
 #include <shlobj.h>
+#include <filesystem>
 
 
 class EXPORT_API DataIO

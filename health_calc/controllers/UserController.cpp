@@ -56,6 +56,7 @@ void UserController::setLastName(QString lName)
 		return;
 
 	m_lastName = lName;
+	courier->setLastName(m_lastName.toStdWString());
 	emit lastNameChanged(m_firstName);
 }
 
@@ -65,6 +66,7 @@ void UserController::setAge(int a)
 		return;
 
 	m_age = a;
+	courier->setAge(m_age);
 	emit ageChanged(m_age);
 }
 
@@ -74,6 +76,7 @@ void UserController::setWeight(double w)
 		return;
 
 	m_weight = w;
+	courier->setWeight(m_weight);
 	emit weightChanged(m_weight);
 }
 
@@ -83,6 +86,7 @@ void UserController::setHeight(double h)
 		return;
 
 	m_height = h;
+	courier->setHeight(m_height);
 	emit heightChanged(m_height);
 }
 
@@ -92,6 +96,7 @@ void UserController::setIsMale(bool ismale)
 		return;
 
 	m_isMale = ismale;
+	courier->setIsMale(m_isMale);
 	emit isMaleChanged(m_isMale);
 }
 
@@ -101,5 +106,6 @@ void UserController::setFirstName(QString fName)
 		return;
 
 	m_firstName = fName;
+	courier->setFirstName(m_firstName.toStdWString());
 	emit firstNameChanged(m_firstName);
 }
