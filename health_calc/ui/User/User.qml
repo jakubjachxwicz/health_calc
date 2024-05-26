@@ -127,14 +127,21 @@ ColumnLayout
 		}
 	}
 
-	Button {
-		// Layout.fillHeight: true
-		anchors.horizontalCenter: parent
+	RowLayout {
+		Button {
+			anchors.horizontalCenter: parent
 	
-		text: qsTr("Zapisz")
-		implicitWidth: 213
-		implicitHeight: 41
+			text: qsTr("Zapisz")
+			implicitWidth: 213
+			implicitHeight: 41
 
-		onClicked: UserHandler.save();
+			onClicked: UserHandler.save();
+		}
+
+		Label {
+			text: qsTr(UserHandler.infoMessage)
+			leftPadding: 30
+			font.pixelSize: 16
+		}
 	}
 }

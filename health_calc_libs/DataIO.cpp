@@ -41,12 +41,15 @@ void DataIO::SaveUserData(DataCourier& dataContainer)
 		wcstombs_s(&convertedChars, charPath, path, MAX_PATH);
 
 		std::string filePath = charPath;
-		filePath += "\\HealthCalc\\userdata.txt";
+		filePath += "\\HealthCalc";
 
 		CoTaskMemFree(path);
 
+		std::filesystem::path new_dir = filePath;
+		std::filesystem::create_directory(new_dir);
 
-		std::ofstream output("C:\\Users\\KubaJ\\Documents\\HealthCalc\\userdata.txt", std::ios::out);
+		std::wofstream output(filePath + "\\userdata");
+		output.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
 
 		if (!output.is_open())
 			throw std::ios_base::failure("Problem z otwarciem pliku");
@@ -57,8 +60,8 @@ void DataIO::SaveUserData(DataCourier& dataContainer)
 		// Weight
 		// Height
 		// Is male
-		//output << dataContainer.getFirstName() << std::endl;
-		//output << dataContainer.getLastName() << std::endl;
+		output << dataContainer.getFirstName() << std::endl;
+		output << dataContainer.getLastName() << std::endl;
 		output << dataContainer.getAge() << std::endl;
 		output << dataContainer.getWeight() << std::endl;
 		output << dataContainer.getHeight() << std::endl;
@@ -72,4 +75,6 @@ void DataIO::SaveUserData(DataCourier& dataContainer)
 		if (output.fail())
 			throw std::ios_base::failure("Problem z zamknieciem pliku");
 	}
+
+	else throw std::ios_base::failure("Problem ze sciezka do katalogu");
 }

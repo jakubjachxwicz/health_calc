@@ -4,8 +4,25 @@
 
 void UserController::save()
 {
-	DataIO io;
-	io.SaveUserData(*courier);
+	try
+	{
+		DataIO io;
+		io.SaveUserData(*courier);
+
+		setInfoMessage("Zapisano dane u\u017Cytkownika w: Documents\\HealthCalc\\userdata");
+	}
+	catch (std::filesystem::filesystem_error& e)
+	{
+		setInfoMessage(e.what());
+	}
+	catch (std::ios_base::failure& e)
+	{
+		setInfoMessage(e.what());
+	}
+	catch (...)
+	{
+		setInfoMessage("Nie mo\u017Cna zapisa\u0107 do pliku");
+	}
 }
 
 UserController::UserController(QObject* parent, DataCourier* dc)
@@ -16,6 +33,8 @@ UserController::UserController(QObject* parent, DataCourier* dc)
 	m_height = dc->getHeight();
 	m_weight = dc->getWeight();
 	m_isMale = dc->getIsMale();
+
+	m_infoMessage = "";
 
 	courier = dc;
 }
@@ -50,12 +69,18 @@ bool UserController::getIsMale()
 	return m_isMale;
 }
 
+QString UserController::getInfoMessage()
+{
+	return m_infoMessage;
+}
+
 void UserController::setLastName(QString lName)
 {
 	if (m_lastName == lName)
 		return;
 
 	m_lastName = lName;
+	courier->setLastName(m_lastName.toStdWString());
 	emit lastNameChanged(m_firstName);
 }
 
@@ -65,6 +90,7 @@ void UserController::setAge(int a)
 		return;
 
 	m_age = a;
+	courier->setAge(m_age);
 	emit ageChanged(m_age);
 }
 
@@ -74,6 +100,7 @@ void UserController::setWeight(double w)
 		return;
 
 	m_weight = w;
+	courier->setWeight(m_weight);
 	emit weightChanged(m_weight);
 }
 
@@ -83,6 +110,7 @@ void UserController::setHeight(double h)
 		return;
 
 	m_height = h;
+	courier->setHeight(m_height);
 	emit heightChanged(m_height);
 }
 
@@ -92,7 +120,17 @@ void UserController::setIsMale(bool ismale)
 		return;
 
 	m_isMale = ismale;
+	courier->setIsMale(m_isMale);
 	emit isMaleChanged(m_isMale);
+}
+
+void UserController::setInfoMessage(QString ms)
+{
+	if (m_infoMessage == ms)
+		return;
+
+	m_infoMessage = ms;
+	emit infoMessageChanged(m_infoMessage);
 }
 
 void UserController::setFirstName(QString fName)
@@ -101,5 +139,6 @@ void UserController::setFirstName(QString fName)
 		return;
 
 	m_firstName = fName;
+	courier->setFirstName(m_firstName.toStdWString());
 	emit firstNameChanged(m_firstName);
 }
