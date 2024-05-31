@@ -33,7 +33,7 @@ class BMRController : public QObject
 
 	void calculate();
 public:
-	BMRController(QObject *parent);
+	BMRController(QObject *parent, DataCourier *courier);
 
 	Q_INVOKABLE void exportToFile(QString path);
 

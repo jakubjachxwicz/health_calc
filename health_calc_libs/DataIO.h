@@ -4,6 +4,7 @@
 
 #include "API.h"
 #include "DataCourier.h"
+#include "FileStructureException.h"
 
 #include <iostream>
 #include <map>
@@ -18,7 +19,10 @@
 
 class EXPORT_API DataIO
 {
+	std::string getDocumentsPath();
+
 public:
-	void ExportToFile(std::map<std::string, std::any> dataContainer, const std::string& fileName);
-	void SaveUserData(DataCourier& dataContainer);
+	void exportToFile(std::map<std::string, std::any> dataContainer, const std::string& fileName);
+	void saveUserData(DataCourier& dataContainer);
+	DataCourier readUserData();
 };

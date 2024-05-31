@@ -7,7 +7,7 @@ void UserController::save()
 	try
 	{
 		DataIO io;
-		io.SaveUserData(*courier);
+		io.saveUserData(*courier);
 
 		setInfoMessage("Zapisano dane u\u017Cytkownika w: Documents\\HealthCalc\\userdata");
 	}

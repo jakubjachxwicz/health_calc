@@ -24,7 +24,7 @@ void MacroController::exportToFile(QString path)
 	DataIO dataIO;
 	try
 	{
-		dataIO.ExportToFile(myData, finalPath);
+		dataIO.exportToFile(myData, finalPath);
 		setResultMessage("Dane zapisane w pliku macro.csv");
 	}
 	catch (std::ios_base::failure& e)

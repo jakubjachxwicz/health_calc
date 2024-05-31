@@ -40,7 +40,7 @@ void BMIController::exportToFile(QString path)
 	DataIO dataIO;
 	try
 	{
-		dataIO.ExportToFile(myData, finalPath);
+		dataIO.exportToFile(myData, finalPath);
 		setResultMessage("Dane zapisane w pliku bmi.csv");
 	}
 	catch (std::ios_base::failure& e)
