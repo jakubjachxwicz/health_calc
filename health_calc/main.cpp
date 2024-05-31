@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     catch (const std::exception& e)
     {}
 
-    BMRController m_BMRHandler(nullptr);
+    BMRController m_BMRHandler(nullptr, &dataCourier);
     BMIController m_BMIHandler(nullptr);
     BFPController m_BFPHandler(nullptr);
     MacroController m_MacroHandler(nullptr);
