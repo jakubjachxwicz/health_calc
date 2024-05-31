@@ -136,10 +136,12 @@ copy /Y "$(SolutionDir)x64\Debug\*lib" "$(SolutionDir)lib"</Command>
     <ClInclude Include="API.h" />
     <ClInclude Include="DataCourier.h" />
     <ClInclude Include="DataIO.h" />
+    <ClInclude Include="FileStructureException.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataCourier.cpp" />
     <ClCompile Include="DataIO.cpp" />
+    <ClCompile Include="FileStructureException.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

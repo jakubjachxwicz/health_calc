@@ -34,7 +34,7 @@ void BMRController::exportToFile(QString path)
 	DataIO dataIO;
 	try
 	{
-		dataIO.ExportToFile(myData, finalPath);
+		dataIO.exportToFile(myData, finalPath);
 		setResultMessage("Dane zapisane w pliku zapotrzebowanie_kaloryczne.csv");
 	}
 	catch (std::ios_base::failure& e)

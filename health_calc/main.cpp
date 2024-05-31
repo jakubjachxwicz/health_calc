@@ -9,6 +9,7 @@
 #include "controllers/MacroController.h"
 #include "controllers/UserController.h"
 #include "DataCourier.h"
+#include "FileStructureException.h"
 
 
 int main(int argc, char *argv[])
@@ -22,6 +23,18 @@ int main(int argc, char *argv[])
     app.setWindowIcon(QIcon(":/qt/qml/health_calc/ui/Assets/favicon.png"));
 
     DataCourier dataCourier;
+    DataIO io;
+    
+    try
+    {
+        dataCourier = io.readUserData();
+    }
+    catch (const FileStructureException& e)
+    {}
+    catch (const std::ios_base::failure& e) 
+    {}
+    catch (const std::exception& e)
+    {}
 
     BMRController m_BMRHandler(nullptr);
     BMIController m_BMIHandler(nullptr);
