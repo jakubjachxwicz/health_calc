@@ -152,12 +152,12 @@ void BFPController::exportToFile(QString path)
 	}
 }
 
-BFPController::BFPController(QObject* parent) : QObject(parent)
+BFPController::BFPController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_age = 14;
-	m_height = 185.9;
-	m_weight = 95.14;
-	m_isMale = true;
+	m_age = courier->getAge();
+	m_height = courier->getHeight();
+	m_weight = courier->getWeight();
+	m_isMale = courier->getIsMale();
 	m_resultMessage = "";
 
 	calculate();

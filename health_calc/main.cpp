@@ -37,9 +37,9 @@ int main(int argc, char *argv[])
     {}
 
     BMRController m_BMRHandler(nullptr, &dataCourier);
-    BMIController m_BMIHandler(nullptr);
-    BFPController m_BFPHandler(nullptr);
-    MacroController m_MacroHandler(nullptr);
+    BMIController m_BMIHandler(nullptr, &dataCourier);
+    BFPController m_BFPHandler(nullptr, &dataCourier);
+    MacroController m_MacroHandler(nullptr, &dataCourier);
     UserController m_userHandler(nullptr, &dataCourier);
 
     QQmlApplicationEngine engine;

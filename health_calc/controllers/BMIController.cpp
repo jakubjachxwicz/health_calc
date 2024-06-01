@@ -49,10 +49,10 @@ void BMIController::exportToFile(QString path)
 	}
 }
 
-BMIController::BMIController(QObject* parent) : QObject(parent)
+BMIController::BMIController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_height = 198;
-	m_weight = 98;
+	m_height = courier->getHeight();
+	m_weight = courier->getWeight();
 	m_resultMessage = "";
 
 	calculate();

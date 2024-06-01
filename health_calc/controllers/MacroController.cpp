@@ -33,9 +33,9 @@ void MacroController::exportToFile(QString path)
 	}
 }
 
-MacroController::MacroController(QObject* parent) : QObject(parent)
+MacroController::MacroController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_BMR = 2000;
+	m_BMR = courier->getBmr();
 	m_resultMessage = "";
 
 	calculate();
