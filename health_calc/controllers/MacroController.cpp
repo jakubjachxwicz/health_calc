@@ -6,7 +6,10 @@ void MacroController::calculate()
 	prot = (m_BMR * 0.3) / 4;
 	carb = (m_BMR * 0.4) / 4;
 	fat = (m_BMR * 0.3) / 9;
-	QString msg = QString("Twoje dzienne zapotrzebowanie\nBiałka: %1 g\nWęglowodany: %2 g\nTłuszcze: %3 g").arg(prot).arg(carb).arg(fat);
+	QString msg = QString("Twoje dzienne zapotrzebowanie\nBiałka: %1 g\nWęglowodany: %2 g\nTłuszcze: %3 g")
+		.arg(prot, 0, 'f', 2)
+		.arg(carb, 0, 'f', 2)
+		.arg(fat, 0, 'f', 2);
 	setResultMessage(msg);
 }
 
@@ -33,9 +36,9 @@ void MacroController::exportToFile(QString path)
 	}
 }
 
-MacroController::MacroController(QObject* parent) : QObject(parent)
+MacroController::MacroController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_BMR = 2000;
+	m_BMR = courier->getBmr();
 	m_resultMessage = "";
 
 	calculate();

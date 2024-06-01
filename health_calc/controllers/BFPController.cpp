@@ -18,19 +18,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 8)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 20)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -39,19 +39,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 11)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 22)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -60,19 +60,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 13)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 25)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -84,19 +84,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 21)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 33)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -105,19 +105,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 23)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 34)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -126,19 +126,19 @@ void BFPController::calculate()
 		{
 			if (BFP < 24)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("aquamarine");
 			}
 			else if (BFP < 36)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("lightgreen");
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 				setRectColor("tomato");
 			}
@@ -170,12 +170,12 @@ void BFPController::exportToFile(QString path)
 	}
 }
 
-BFPController::BFPController(QObject* parent) : QObject(parent)
+BFPController::BFPController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_age = 14;
-	m_height = 185.9;
-	m_weight = 95.14;
-	m_isMale = true;
+	m_age = courier->getAge();
+	m_height = courier->getHeight();
+	m_weight = courier->getWeight();
+	m_isMale = courier->getIsMale();
 	m_resultMessage = "";
 
 	calculate();

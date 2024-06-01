@@ -7,28 +7,29 @@ void BMIController::calculate()
 
 	if (BMI < 18.5)
 	{
-		QString msg = QString("Twoje BMI: %1\nNiedowaga").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNiedowaga").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 		setRectColor("aquamarine");
 	}
 	else if (BMI < 25)
 	{
-		QString msg = QString("Twoje BMI: %1\nNorma").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNorma").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 		setRectColor("lightgreen");
 	}
 	else if (BMI < 30)
 	{
-		QString msg = QString("Twoje BMI: %1\nNadwaga").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNadwaga").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 		setRectColor("tan");
 	}
 	else
 	{
-		QString msg = QString("Twoje BMI: %1\nOty\u0142osc").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nOtylosc").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 		setRectColor("tomato");
 	}
+
 }
 
 void BMIController::exportToFile(QString path)
@@ -53,10 +54,10 @@ void BMIController::exportToFile(QString path)
 	}
 }
 
-BMIController::BMIController(QObject* parent) : QObject(parent)
+BMIController::BMIController(QObject* parent, DataCourier* courier) : QObject(parent)
 {
-	m_height = 198;
-	m_weight = 98;
+	m_height = courier->getHeight();
+	m_weight = courier->getWeight();
 	m_resultMessage = "";
 
 	calculate();

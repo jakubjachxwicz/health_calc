@@ -27,7 +27,7 @@ class BMIController : public QObject
 
 	void calculate();
 public:
-	BMIController(QObject* parent);
+	BMIController(QObject* parent, DataCourier* courier);
 
 	Q_INVOKABLE void exportToFile(QString path);
 

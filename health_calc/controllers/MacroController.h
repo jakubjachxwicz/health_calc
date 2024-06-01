@@ -19,7 +19,7 @@ class MacroController : public QObject
 
 	void calculate();
 public:
-	MacroController(QObject* parent);
+	MacroController(QObject* parent, DataCourier* courier);
 
 	Q_INVOKABLE void exportToFile(QString path);
 

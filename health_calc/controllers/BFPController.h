@@ -32,7 +32,7 @@ class BFPController : public QObject
 
 	void calculate();
 public:
-	BFPController(QObject* parent);
+	BFPController(QObject* parent, DataCourier* courier);
 
 	Q_INVOKABLE void exportToFile(QString path);
 
