@@ -25,7 +25,7 @@ ColumnLayout {
 
 			horizontalAlignment: Text.AlignHCenter
 			padding: 5
-			text: "BMR"
+			text: "BMR:"
 		}
 
 		TextField {

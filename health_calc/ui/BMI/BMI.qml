@@ -58,15 +58,22 @@ ColumnLayout {
 		}
 	}
 
-	Label {
+	Rectangle {
 		Layout.fillWidth: true
 		Layout.fillHeight: true
 		Layout.margins: 60
-
-		horizontalAlignment: Text.AlignHCenter
-		wrapMode: Text.WrapAnywhere
-		font.pixelSize: 16
-		text: BMIHandler.resultMessage
+		color: BMIHandler.rectColor
+		width: 100
+		height: 100
+		radius: 10
+		Label {
+			width: parent.width
+			horizontalAlignment: Text.AlignHCenter
+			padding: 16
+			wrapMode: Text.WrapAnywhere
+			font.pixelSize: 16
+			text: BMIHandler.resultMessage
+		}
 	}
 
 	Button {
