@@ -9,21 +9,25 @@ void BMIController::calculate()
 	{
 		QString msg = QString("Twoje BMI: %1\nNiedowaga").arg(BMI);
 		setResultMessage(msg);
+		setRectColor("aquamarine");
 	}
 	else if (BMI < 25)
 	{
 		QString msg = QString("Twoje BMI: %1\nNorma").arg(BMI);
 		setResultMessage(msg);
+		setRectColor("lightgreen");
 	}
 	else if (BMI < 30)
 	{
 		QString msg = QString("Twoje BMI: %1\nNadwaga").arg(BMI);
 		setResultMessage(msg);
+		setRectColor("tan");
 	}
 	else
 	{
-		QString msg = QString("Twoje BMI: %1\nOtylosc").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nOty\u0142osc").arg(BMI);
 		setResultMessage(msg);
+		setRectColor("tomato");
 	}
 }
 
@@ -71,6 +75,11 @@ double BMIController::getWeight()
 QString BMIController::getResultMessage()
 {
 	return m_resultMessage;
+}
+
+QString BMIController::getRectColor()
+{
+	return m_rectColor;
 }
 
 void BMIController::setHeight(double h)
@@ -140,4 +149,13 @@ void BMIController::setResultMessage(QString m)
 
 	m_resultMessage = m;
 	emit resultMessageChanged(m_resultMessage);
+}
+
+void BMIController::setRectColor(QString c)
+{
+	if (m_rectColor == c)
+		return;
+
+	m_rectColor = c;
+	emit rectColorChanged(m_rectColor);
 }

@@ -114,15 +114,28 @@ ColumnLayout {
 		}
 	}
 
-	Label {
+	
+	Rectangle {
 		Layout.fillWidth: true
 		Layout.fillHeight: true
 		Layout.margins: 60
+		color: BFPHandler.rectColor
+		width: 100
+		height: 100
+		radius: 10
 
-		horizontalAlignment: Text.AlignHCenter
-		wrapMode: Text.WrapAnywhere
-		font.pixelSize: 16
-		text: BFPHandler.resultMessage
+		Label {
+			Layout.fillWidth: true
+			Layout.fillHeight: true
+			Layout.margins: 60
+
+			width: parent.width
+			horizontalAlignment: Text.AlignHCenter
+			wrapMode: Text.WrapAnywhere
+			padding: 16
+			font.pixelSize: 16
+			text: BFPHandler.resultMessage
+		}
 	}
 
 	Button {
