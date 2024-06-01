@@ -18,17 +18,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 8)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 20)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}
@@ -36,17 +36,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 11)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 22)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}
@@ -54,17 +54,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 13)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 25)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}
@@ -75,17 +75,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 21)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 33)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}
@@ -93,17 +93,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 23)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 34)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}
@@ -111,17 +111,17 @@ void BFPController::calculate()
 		{
 			if (BFP < 24)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa niskie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else if (BFP < 36)
 			{
-				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nW normie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 			else
 			{
-				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP);
+				QString msg = QString("Twoje BFP: %1 %\nZa wysokie").arg(BFP, 0, 'f', 2);
 				setResultMessage(msg);
 			}
 		}

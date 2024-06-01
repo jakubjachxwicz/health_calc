@@ -7,24 +7,25 @@ void BMIController::calculate()
 
 	if (BMI < 18.5)
 	{
-		QString msg = QString("Twoje BMI: %1\nNiedowaga").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNiedowaga").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 	}
 	else if (BMI < 25)
 	{
-		QString msg = QString("Twoje BMI: %1\nNorma").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNorma").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 	}
 	else if (BMI < 30)
 	{
-		QString msg = QString("Twoje BMI: %1\nNadwaga").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nNadwaga").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 	}
 	else
 	{
-		QString msg = QString("Twoje BMI: %1\nOtylosc").arg(BMI);
+		QString msg = QString("Twoje BMI: %1\nOtylosc").arg(BMI, 0, 'f', 2);
 		setResultMessage(msg);
 	}
+
 }
 
 void BMIController::exportToFile(QString path)
