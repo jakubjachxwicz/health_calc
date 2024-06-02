@@ -6,10 +6,26 @@ void UserController::save()
 {
 	try
 	{
+		if (courier->getFirstName().length() > 30 || courier->getFirstName().length() < 1)
+			throw UserInputException("Niepoprawna d\u0142ugo\u015B\u0107 imienia");
+		if (courier->getLastName().length() > 30 || courier->getFirstName().length() < 1)
+			throw UserInputException("Niepoprawna d\u0142ugo\u015B\u0107 nazwiska");
+		if (courier->getAge() <= 0 || courier->getAge() > 150)
+			throw UserInputException("Niepoprawny wiek");
+		if (isnan(courier->getHeight()) || courier->getHeight() <= 0 || courier->getHeight() > 250)
+			throw UserInputException("Niepoprawny wzrost");
+		if (isnan(courier->getWeight()) || courier->getWeight() <= 0 || courier->getWeight() > 300)
+			throw UserInputException("Niepoprawna waga");
+
+		
 		DataIO io;
 		io.saveUserData(*courier);
 
 		setInfoMessage("Zapisano dane u\u017Cytkownika w: Documents\\HealthCalc\\userdata");
+	}
+	catch (UserInputException e)
+	{
+		setInfoMessage(e.what());
 	}
 	catch (std::filesystem::filesystem_error& e)
 	{

@@ -9,7 +9,7 @@ DataCourier::DataCourier()
     height = 198;
     weight = 98;
     isMale = true;
-    bmr = 3785.77;
+    bmr = 0;
 }
 
 std::wstring DataCourier::getFirstName()

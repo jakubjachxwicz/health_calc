@@ -4,7 +4,7 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 
 ColumnLayout {
-	width: parent.width * .8
+	width: parent.width * .7
 	anchors.horizontalCenter: parent.horizontalCenter
 	
 	Label {
