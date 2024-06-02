@@ -3,6 +3,7 @@
 #include <QObject>
 #include <filesystem>
 #include "DataCourier.h"
+#include "CustomExceptions.h"
 
 
 class UserController : public QObject

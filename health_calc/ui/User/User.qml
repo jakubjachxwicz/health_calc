@@ -5,7 +5,7 @@ import QtQuick.Dialogs
 
 ColumnLayout
 {
-	width: parent.width * .8
+	width: parent.width * .55
 	anchors.horizontalCenter: parent.horizontalCenter
 
 	Label
@@ -124,6 +124,12 @@ ColumnLayout
 					}
 				}
 			}
+		}
+	}
+
+	RowLayout {
+		Rectangle {
+			height: 40
 		}
 	}
 

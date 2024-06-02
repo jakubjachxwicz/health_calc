@@ -37,3 +37,16 @@ public:
 		return "Nie wszystkie wprowadzone dane sa poprawne";
 	}
 };
+
+class UserInputException : std::exception
+{
+private:
+	const char* message;
+
+public:
+	UserInputException(const char* msg) : message(msg) {}
+	const char* what()
+	{
+		return message;
+	}
+};

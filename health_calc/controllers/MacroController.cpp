@@ -56,9 +56,18 @@ QString MacroController::getResultMessage()
 
 void MacroController::setBMR(double b)
 {
-		m_BMR = b;
-		calculate();
-		emit BMRChanged(m_BMR);
+	if (m_BMR == b)
+		return;
+	
+	if (isnan(b) || b < 0 || b > 5000)
+	{
+		setResultMessage("Niepoprawna wartość BMR");
+		return;
+	}
+	
+	m_BMR = b;
+	calculate();
+	emit BMRChanged(m_BMR);
 }
 
 void MacroController::setResultMessage(QString m)

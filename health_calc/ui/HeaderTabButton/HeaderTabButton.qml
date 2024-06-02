@@ -7,7 +7,7 @@ TabButton {
     text: qsTr("Example")
     background: Rectangle {
         implicitHeight: 36
-        color: headerTabButton.focus ? "pink" : "bisque"
+        color: headerTabButton.focus ? "lightslategrey" : "silver"
         border.color: "#1c1919"
         border.width: 1
     }
